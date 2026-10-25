@@ -63,6 +63,22 @@
       "publisher":{"@type":"Organization","name":"Small Browser Tools"}
     },
     {
+      "@type":"Dataset",
+      "name":"Chat emote, badge and sticker size reference (Twitch, 7TV, BetterTTV, FrankerFaceZ, Kick, Discord)",
+      "description":"Pixel sizes, file size ceilings, accepted formats and minimum readable size for chat emotes, sub badges, emoji and stickers on Twitch, 7TV, BetterTTV, FrankerFaceZ, Kick and Discord, with the official source URL for each record.",
+      "url":"https://fuunyking44.github.io/emote-sizes/",
+      "isAccessibleForFree":true,
+      "license":"https://creativecommons.org/publicdomain/zero/1.0/",
+      "creator":{"@type":"Organization","name":"Small Browser Tools"},
+      "keywords":["emote size","Twitch emote size","sub badge size","7TV emote size","BTTV emote size","FrankerFaceZ emote size","Kick emote size","Discord emoji size"],
+      "dateModified":"2026-10-25",
+      "distribution":{
+        "@type":"DataDownload",
+        "contentUrl":"https://fuunyking44.github.io/emote-sizes/data.json",
+        "encodingFormat":"application/json"
+      }
+    },
+    {
       "@type":"FAQPage",
       "mainEntity":[
         {"@type":"Question","name":"What size should a Twitch emote be?",
@@ -183,6 +199,14 @@
 
 <h3>Should I upload the biggest size or export every size?</h3>
 <p>Twitch, Kick and BTTV: export every size yourself. 7TV and FFZ: upload the largest and let the platform generate the rest. In both cases start from artwork at least as large as the biggest tier — downscaling preserves detail, upscaling cannot create it.</p>
+
+<h2>Take the data with you</h2>
+<p>The people who need these numbers most are building emote tools, and they would rather import them than retype them. So the same table is published as one JSON file: no key, no rate limit, no attribution required, released under CC0 so it can go into a commercial product unchanged.</p>
+<div class="box">
+  <p style="margin-top:0"><a href="/emote-sizes/data.json"><strong>data.json</strong></a> — 10 records, one per platform and asset type, with export sizes, display sizes, byte ceilings, accepted formats, the minimum size at which the artwork is still readable, and the source URL behind every number.</p>
+  <p class="src" style="margin-bottom:0"><code>curl https://fuunyking44.github.io/emote-sizes/data.json</code></p>
+</div>
+<p class="src">Every row carries the URL it was taken from. If a number disagrees with the platform's own documentation, that URL is the place to check, and a correction is applied to both this page and the JSON at the same time — which is the whole point of keeping the two in one repository.</p>
 
 <h2>Sources</h2>
 <ul class="src">
