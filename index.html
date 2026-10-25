@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Small Browser Tools — free, no signup, nothing uploaded</title>
+<meta name="description" content="A small collection of single-purpose browser tools for streamers and creators. Everything runs locally in your browser, so files never leave your device.">
+<link rel="canonical" href="https://fuunyking44.github.io/">
+<meta name="theme-color" content="#9146FF">
+<meta property="og:title" content="Small Browser Tools">
+<meta property="og:description" content="Single-purpose browser tools for streamers and creators. Free, no signup, nothing uploaded.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://fuunyking44.github.io/">
+<meta name="robots" content="index,follow">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%239146FF'/%3E%3Cpath d='M20 20h24v16l-8 8h-6l-6 6v-6h-4z' fill='%23fff'/%3E%3C/svg%3E">
+<style>
+  :root{--purple:#9146FF;--ink:#14121a;--mid:#5b5568;--line:#e7e3f2;--bg:#faf8ff}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:var(--ink);background:var(--bg);padding:0 20px 72px}
+  .wrap{max-width:760px;margin:0 auto}
+  header{padding:56px 0 32px}
+  .kicker{display:inline-block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--purple);font-weight:700;margin-bottom:14px}
+  h1{font-size:clamp(28px,5vw,40px);line-height:1.2;letter-spacing:-.02em;font-weight:800}
+  .sub{margin-top:14px;color:var(--mid);font-size:17px;max-width:58ch}
+  h2{font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);font-weight:700;margin:40px 0 14px}
+  .card{display:block;text-decoration:none;color:inherit;background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px 22px;margin-bottom:12px;transition:.18s}
+  .card:hover{border-color:var(--purple);box-shadow:0 8px 24px rgba(145,70,255,.12);transform:translateY(-1px)}
+  .card h3{font-size:19px;font-weight:700;letter-spacing:-.01em}
+  .card p{color:var(--mid);font-size:15px;margin-top:6px}
+  .card .go{color:var(--purple);font-weight:600;font-size:14px;margin-top:10px;display:block}
+  .notes{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px 22px;color:var(--mid);font-size:15px}
+  .notes strong{color:var(--ink)}
+  footer{margin-top:44px;color:#8a8398;font-size:13px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <span class="kicker">Browser tools</span>
+    <h1>Small tools that do one thing properly</h1>
+    <p class="sub">Everything here runs inside your browser. Nothing is uploaded to a server, there is no signup, and there is no file size paywall.</p>
+  </header>
+
+  <h2>Tools</h2>
+
+  <a class="card" href="/twitch-emote-resizer/">
+    <h3>Twitch Emote Resizer</h3>
+    <p>One upload gives you all three Twitch emote sizes — 112×112, 56×56 and 28×28 — as transparent PNGs under 1 MB, plus a 320×320 Discord sticker.</p>
+    <span class="go">Open the tool →</span>
+  </a>
+
+  <h2>Why these exist</h2>
+  <div class="notes">
+    <p>Most “free online converters” upload your file to a server, wait, then hand back a worse version and ask for money to remove a watermark. These tools parse and re-encode the image <strong>on your own machine</strong> using the browser canvas, so the file never travels anywhere.</p>
+  </div>
+
+  <footer>Built and maintained by one person. No ads, no trackers.</footer>
+</div>
+</body>
+</html>
