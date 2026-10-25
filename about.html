@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>About — Small Browser Tools</title>
+<meta name="description" content="Who makes these tools, why they run entirely in the browser, and how the reference figures on this site are checked.">
+<link rel="canonical" href="https://fuunyking44.github.io/about.html">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#9146FF">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%239146FF'/%3E%3Cpath d='M20 20h24v16l-8 8h-6l-6 6v-6h-4z' fill='%23fff'/%3E%3C/svg%3E">
+<style>
+  :root{--purple:#9146FF;--ink:#14121a;--mid:#5b5568;--line:#e7e3f2;--bg:#faf8ff}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:var(--ink);background:var(--bg);padding:0 20px 80px}
+  .wrap{max-width:720px;margin:0 auto}
+  header{padding:48px 0 8px}
+  .kicker{display:inline-block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--purple);font-weight:700;margin-bottom:14px}
+  .kicker a{color:inherit;text-decoration:none}
+  h1{font-size:clamp(26px,4.4vw,34px);line-height:1.24;letter-spacing:-.02em;font-weight:800}
+  .lede{margin-top:16px;font-size:17px;color:#2e2a38;max-width:64ch}
+  h2{font-size:19px;font-weight:700;margin:34px 0 10px}
+  p{margin:12px 0;max-width:68ch}
+  ul{margin:12px 0 12px 22px}
+  li{margin:7px 0;max-width:64ch}
+  a{color:var(--purple)}
+  .box{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:20px 0}
+  .rule{display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--line)}
+  .rule:last-child{border-bottom:none}
+  .rule b{flex:0 0 118px;font-size:14px;color:#4a3f66}
+  .rule span{font-size:15px;color:#3a3446}
+  footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);color:#8a8398;font-size:13.5px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <span class="kicker"><a href="/">Small Browser Tools</a></span>
+  <h1>About this site</h1>
+  <p class="lede">A small collection of single-purpose browser tools, plus a reference page that documents the numbers other guides keep getting wrong.</p>
+</header>
+
+<h2>Why it exists</h2>
+<p>Most “free online converter” sites work the same way: you upload your file to someone's server, wait, get back a lower-quality version, and are then asked to pay to remove a watermark or to unlock the size you actually needed. For a 40 KB emote or a PDF you were sent by a client, that is a bad trade — you are handing over a private file to save yourself thirty seconds.</p>
+<p>Every tool here is a single HTML file. It reads your file with the browser's own APIs, does the work locally, and hands it back. There is no upload endpoint, because there is no server doing the work. That also means there is no cost per file, so there is no reason to meter you, watermark you or cap your file size.</p>
+
+<h2>How the tools are built</h2>
+<div class="box">
+  <div class="rule"><b>No upload</b><span>Processing happens in your browser. The tools keep working if you go offline after loading the page.</span></div>
+  <div class="rule"><b>No account</b><span>Nothing to sign up for, nothing to log in to, no email required.</span></div>
+  <div class="rule"><b>No watermark</b><span>Output is your file, not your file plus branding.</span></div>
+  <div class="rule"><b>No size paywall</b><span>The limits in the tools are the platform's real limits, not a business model.</span></div>
+</div>
+
+<h2>How the reference numbers are checked</h2>
+<p>The <a href="/emote-sizes/">emote and badge size reference</a> is the one page here that is not a tool. It exists because most published size charts are copied from each other rather than from the platforms, and the copies drift. The 7TV upload limit in particular is quoted as 2.5 MB by several well-known emote tools; 7TV's own help centre says 7 MB.</p>
+<p>The method is deliberately boring: read the platform's own documentation where it exists, otherwise read the validation rules the upload form actually enforces, cite which one was used, and date the page so a reader can judge how stale it is. Where a number is uncertain — Kick's upload ceiling changes more often than the others — the page says so instead of printing a confident figure.</p>
+
+<h2>Corrections</h2>
+<p>If a number on this site is wrong, it is worth fixing, because a wrong specification costs someone an upload attempt or a rejected emote. Corrections are welcome through the GitHub account that hosts this site: <a href="https://github.com/fuunyking44" rel="nofollow noopener" target="_blank">@fuunyking44</a>. Please include a link to the page you are correcting and, if possible, the source that shows the correct value.</p>
+
+<h2>Who maintains it</h2>
+<p>One person, independently. The site is served as static files from GitHub Pages and has no analytics, no tracking scripts and no advertising at present. The <a href="/privacy.html">privacy policy</a> explains exactly what that means for your data — which is, essentially, nothing beyond the ordinary logs any web host keeps.</p>
+
+<footer>
+  <p><a href="/">Home</a> · <a href="/privacy.html">Privacy</a> · <a href="/emote-sizes/">Emote size reference</a></p>
+</footer>
+</div>
+</body>
+</html>
