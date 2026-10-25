@@ -71,6 +71,8 @@
          "acceptedAnswer":{"@type":"Answer","text":"Sub badges are uploaded in three sizes — 72×72, 36×36 and 18×18 pixels — as PNG or GIF, with each file under 25 KB. That is much smaller than the emote limit, which is the most common reason a badge upload is rejected."}},
         {"@type":"Question","name":"What is the 7TV emote size limit?",
          "acceptedAnswer":{"@type":"Answer","text":"According to 7TV's own upload documentation, files may be PNG, APNG, WEBP, WEBM or GIF, up to 7 MB, up to 1000×1000 pixels (7TV resizes automatically), with a maximum of 1000 frames for animated emotes. 7TV then serves the emote in four tiers — 32×32, 64×64, 96×96 and 128×128 — so upload the largest version you have."}},
+        {"@type":"Question","name":"What size should a Kick emote be?",
+         "acceptedAnswer":{"@type":"Answer","text":"Kick takes one PNG or GIF at 500×500 pixels, under 1 MB, and generates the 112, 56 and 28 pixel versions itself — you do not upload three sizes. Some guides state 112×112 and 256 KB, which is not what Kick's help centre or its upload form enforces."}},
         {"@type":"Question","name":"What size does BetterTTV need?",
          "acceptedAnswer":{"@type":"Answer","text":"BTTV takes a single 112×112 pixel image as PNG, GIF or WebP under 1 MB, and displays it at 28 pixels tall in chat."}},
         {"@type":"Question","name":"What sizes does FrankerFaceZ use?",
@@ -108,7 +110,7 @@
 <tr><td>BetterTTV</td><td>Emote</td><td><code>112×112</code> (displayed at 28 px tall)</td><td>1 MB</td><td>PNG, GIF, WebP</td></tr>
 <tr><td>FrankerFaceZ</td><td>Emote</td><td><code>32×32</code> <code>64×64</code> <code>128×128</code></td><td>1 MB</td><td>PNG, GIF</td></tr>
 <tr><td>FrankerFaceZ</td><td>Wide emote</td><td>≤ <code>128</code> wide × <code>32</code> tall</td><td>1 MB</td><td>PNG, GIF</td></tr>
-<tr><td>Kick</td><td>Emote</td><td>Displayed at <code>28</code> <code>56</code> <code>112</code>; larger uploads are downscaled</td><td>1 MB</td><td>PNG, GIF</td></tr>
+<tr><td>Kick</td><td>Emote</td><td>Upload exactly <code>500×500</code>; Kick generates <code>112</code> <code>56</code> <code>28</code></td><td>1 MB</td><td>PNG, GIF</td></tr>
 <tr><td>Discord</td><td>Emoji</td><td><code>128×128</code></td><td>256 KB</td><td>PNG, JPG, GIF</td></tr>
 <tr><td>Discord</td><td>Sticker</td><td><code>320×320</code> exactly</td><td>512 KB</td><td>PNG, APNG</td></tr>
 </tbody>
@@ -123,6 +125,11 @@
 
 <div class="note"><strong>The 28-pixel test.</strong> Before uploading anything, view the artwork at 28×28 on both a light and a dark chat background. If the expression is not readable at that size, no amount of resolution at 112 will save it. Thick outlines and one strong shape beat detail at every size.</div>
 
+<h2>Badges: three densities, not three places</h2>
+<p>Sub badges use three sizes too — 72×72, 36×36 and 18×18 — but they mean something different from an emote's three. An emote gets three files because it appears in three different places: the picker, the message line, and a compact mobile view. A badge gets three files because screens have different pixel densities. It is the same few pixels beside a username at 4×, 2× and 1×.</p>
+<p>That changes what the smallest file is for. The 18×18 badge is not a rare edge case — it is the default, and it renders next to the name on every single message. So the quality gate for a badge is <strong>18 pixels, not 28</strong>. At 18px a badge is a coloured dot with a hint of shape; if it needs text or fine line work to be recognisable, it will read as noise.</p>
+<p>The file limit is the other half of the trap, and it interacts with design rather than sitting beside it. A badge must be a static PNG, transparent, square, under <strong>25 KB per file</strong>. Fussy line work and many colours do not just blur at 18px — they also compress worse, which is how a badge quietly exceeds 25 KB while the 72px version still looks fine. Flat colour and two or three big shapes fix both problems with one decision, which is why badge sets are usually one drawing recoloured per milestone rather than six different drawings.</p>
+
 <h2>7TV: upload big, let the platform cut it down</h2>
 <p>7TV works the opposite way to Twitch. You upload a single file — up to 7 MB, up to 1000×1000 pixels, up to 1000 frames for animation — and 7TV derives the four render tiers itself: 32×32, 64×64, 96×96 and 128×128. You never export four files.</p>
 <p>This is also the number most other guides get wrong. Several popular emote tools state that 7TV caps uploads at 2.5 MB and 150 frames. 7TV's own help centre says 7 MB and 1000 frames. If a tool refuses your file below 7 MB, the tool is enforcing a limit that does not exist.</p>
@@ -134,7 +141,9 @@
 <p>Because both platforms display small and scale the single file, start from 112×112 or 128×128 rather than the display size. A 28-pixel source upscaled to 112 is the standard reason an emote looks broken on one platform and fine on another.</p>
 
 <h2>Kick</h2>
-<p>Kick renders emotes at the same 28, 56 and 112 pixel steps as Twitch and accepts uploads larger than the display size, downscaling them on its side. Its upload limits have changed more often than the other platforms here, so treat any exact figure — including the 1 MB in the table above — as a value to confirm on Kick's own dashboard before you rely on it for a batch of emotes.</p>
+<p>Kick's own help centre is unusually specific: upload a PNG or GIF at <strong>500×500 pixels, under 1 MB</strong>, and Kick generates the 112, 56 and 28 pixel versions itself. You do not export the three sizes.</p>
+<p>This is the second number that is widely misreported. Several guides state that a Kick emote must be 112×112 and under 256 KB, or 128×128 and under 512 KB if animated. Kick's own help article says 500×500 and 1 MB. If a tool refuses your file for being over 256 KB, it is enforcing a rule Kick does not have.</p>
+<p>Because Kick downscales from a single upload, upload at the full 500×500 rather than at 112 — it gives the platform the most data to work with. Keep the image square; a non-square file is cropped to square, usually losing the part you wanted.</p>
 
 <h2>Discord: emoji and stickers are different things</h2>
 <p>A Discord emoji is 128×128 and must be under 256 KB, as PNG, JPG or GIF. That size ceiling is the binding constraint — a detailed 128×128 PNG easily exceeds 256 KB, which is why most rejected emoji are rejected for weight, not dimensions.</p>
@@ -160,6 +169,9 @@
 <h3>What is the 7TV emote size limit?</h3>
 <p>7 MB, 1000×1000 pixels, 1000 frames, in PNG, APNG, WEBP, WEBM or GIF — per 7TV's own upload documentation. It renders at 32, 64, 96 and 128, and you do not export those yourself.</p>
 
+<h3>What size should a Kick emote be?</h3>
+<p>One PNG or GIF at 500×500, under 1 MB. Kick generates 112, 56 and 28 itself. The "112×112 and 256 KB" figure you will see in several guides is not what Kick's help centre states.</p>
+
 <h3>What size does BetterTTV need?</h3>
 <p>One 112×112 file, under 1 MB, PNG/GIF/WebP. Displayed at 28 pixels tall.</p>
 
@@ -175,8 +187,9 @@
 <h2>Sources</h2>
 <ul class="src">
   <li>7TV — <a href="https://help.7tv.app/en/articles/11069712-how-to-upload-an-emote-to-7tv" rel="nofollow noopener" target="_blank">How to upload an emote to 7TV</a> (7 MB, 1000×1000, 1000 frames, accepted formats)</li>
-  <li>Twitch — emote and sub badge upload requirements, as enforced by the Twitch emote upload form</li>
-  <li>Discord — emoji and sticker size limits, as enforced by the Discord server settings upload form</li>
+  <li>Kick — <a href="https://help.kick.com/en/articles/7113467-how-to-add-edit-kick-emotes" rel="nofollow noopener" target="_blank">How to add or edit KICK emotes</a> (500×500, under 1 MB, PNG or GIF)</li>
+  <li>Twitch — emote and sub badge requirements as enforced by the Creator Dashboard upload forms (emote 112/56/28, badge 72/36/18 at 25 KB, static PNG)</li>
+  <li>Discord — emoji and sticker limits as enforced by the server settings upload forms (emoji 128 at 256 KB, sticker 320 at 512 KB)</li>
   <li>BetterTTV and FrankerFaceZ — as enforced by their respective emote upload forms</li>
 </ul>
 
